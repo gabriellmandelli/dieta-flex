@@ -5,6 +5,10 @@ About this app
 ---------------
 This app is just for help people get fit with a flexible diet, counting macro and micronutrients.
 
+Flowchart
+------------
+![](./images/dieta-flex-flowchart.jpeg)
+
 Requirements
 ------------
 * Node 10+
