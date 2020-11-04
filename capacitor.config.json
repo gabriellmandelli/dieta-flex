@@ -2,5 +2,6 @@
   "appId": "com.tcc.dietaflex",
   "appName": "dieta-flex",
   "bundledWebRuntime": false,
-  "webDir": "www"
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/snap/android-studio/94/android-studio/bin/studio.sh"
 }
