@@ -77,7 +77,7 @@ export class AuthService {
       .snapshotChanges()
       .pipe(
         map(data => {
-          return data.map(action => ({ id: action.payload.doc.id, ...action.payload.doc.data() } as UserProfileData));
+          return data.map(action => ({ id: action.payload.doc.id, ...action.payload.doc.data() as UserProfileData }));
         })
       )
   }

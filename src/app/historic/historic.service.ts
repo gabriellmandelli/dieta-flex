@@ -41,7 +41,7 @@ export class HistoricService {
       .snapshotChanges()
       .pipe(
         map(data => {
-          return data.map(action => ({ ...action.payload.doc.data(), id: action.payload.doc.id }));
+          return data.map(action => ({ ...action.payload.doc.data() as any, id: action.payload.doc.id }));
         }),
         take(1)
       )
@@ -53,7 +53,7 @@ export class HistoricService {
       .pipe(
         map(data => {
           return data.map(action => (
-            { ...action.payload.doc.data(), id: action.payload.doc.id, timeOrderBy: this.formatDate(action.payload.doc.data()["time"]) } as HistoricData
+            { ...action.payload.doc.data() as HistoricData, id: action.payload.doc.id, timeOrderBy: this.formatDate(action.payload.doc.data()["time"]) } as HistoricData
           ));
         })
       )
@@ -65,7 +65,7 @@ export class HistoricService {
       .pipe(
         map(data => {
           return data.map(action => (
-            { ...action.payload.doc.data(), id: action.payload.doc.id, timeOrderBy: this.formatDate(action.payload.doc.data()["time"]) } as HistoricData
+            { ...action.payload.doc.data() as HistoricData, id: action.payload.doc.id, timeOrderBy: this.formatDate(action.payload.doc.data()["time"]) } as HistoricData
           ));
         }),
         take(1)

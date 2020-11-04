@@ -61,9 +61,17 @@ export class DietComponent {
     this.dietProcess.diet.dateFormatted = this.diet.dateFormatted
     this.diet.dietBalance = await this.dietProcess.generateDietBalance()
 
-    if (!this.diet.foods) {
+    if (!this.diet.foods ) {
       this.diet.foods = []
       this.dietProcess.diet.foods = []
+    }
+
+    if (this.diet.foods.length == 0){
+      const toast = await this.toastController.create({
+        message: 'Sem alimentos cadastrados.',
+        duration: 4000
+      })
+      toast.present()
     }
   }
 

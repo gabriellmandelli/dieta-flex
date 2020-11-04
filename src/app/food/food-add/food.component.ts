@@ -44,12 +44,12 @@ export class FoodComponent implements OnInit {
         'protein': new FormControl(lbExisteParam ? Number.parseInt(params.protein) : '', Validators.required),
         'fat': new FormControl(lbExisteParam ? Number.parseInt(params.fat) : '', Validators.required),
         'portion': new FormControl(lbExisteParam ? params.portion : false, Validators.required),
+        'food_type': new FormControl(lbExisteParam ? Number.parseInt(params.food_type) : 1, Validators.required),        
       });
     });
   }
 
   onSubmit() {
-
     this.submitAttempt = true;
     if (this.foodForm.valid) {
       this.foodService.createFood(this.foodForm.value)

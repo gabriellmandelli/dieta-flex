@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { FoodService } from '../food.service';
 import { debounceTime, map } from 'rxjs/operators';
 import { FoodData } from '../food-data.model';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-food-list',
@@ -13,12 +14,13 @@ import { FoodData } from '../food-data.model';
 export class FoodListComponent implements OnInit {
 
   public searchControl: FormControl;
-  listFood: Observable<any[]>
-  listFoodBase: Observable<any[]>
+  listFood: Observable<FoodData[]>
+  listFoodBase: Observable<FoodData[]>
 
   constructor(
     private FoodService: FoodService,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController,
   ) {
     this.searchControl = new FormControl();
   }
@@ -37,9 +39,17 @@ export class FoodListComponent implements OnInit {
     this.router.navigate(['food-list/food-add', food])
   }
 
-  getListFood() {
+  async getListFood() {
     this.listFood = this.FoodService.getFood();
     this.listFoodBase = this.listFood;
+
+    if (!this.listFood) {
+      const toast = await this.toastController.create({
+        message: 'Sem alimentos cadastrados.',
+        duration: 4000
+      })
+      toast.present()
+    }
   }
 
   removeFood(food: FoodData) {
