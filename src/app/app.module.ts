@@ -42,7 +42,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DietModalComponent,
     HistoricListComponent,
     HistoricAddComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   entryComponents: [DietModalComponent],
   imports: [

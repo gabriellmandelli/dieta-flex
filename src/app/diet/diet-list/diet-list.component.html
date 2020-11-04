@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [formControl]="searchControl" showCancelButton></ion-searchbar>
+  <ion-searchbar [formControl]="searchControl" showCancelButton="focus"></ion-searchbar>
   <ion-card *ngFor="let item of listDiet">
     <ion-card-header (click)="openEditDiet(item)" color="dark">
       {{item.date}}

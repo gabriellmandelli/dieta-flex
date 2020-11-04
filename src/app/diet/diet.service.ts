@@ -45,7 +45,7 @@ export class DietService {
       .pipe(
         map(data => {
           return data.map(action => (
-            { ...action.payload.doc.data(), id: action.payload.doc.id, dateFormatted: new Date(`${action.payload.doc.data()["date"]} GMT-0300`) } as Diet
+            { ...action.payload.doc.data() as Diet, id: action.payload.doc.id, dateFormatted: new Date(`${action.payload.doc.data()["date"]} GMT-0300`) } as Diet
           ))
         }),
         take(1)

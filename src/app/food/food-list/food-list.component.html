@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [formControl]="searchControl" showCancelButton></ion-searchbar>
+  <ion-searchbar [formControl]="searchControl" showCancelButton="focus"></ion-searchbar>
   <ion-card *ngFor="let item of listFood | async">
     <ion-card-header (click)="openEditFood(item)" color="dark">
       <ion-row>

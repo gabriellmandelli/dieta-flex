@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core'
-import { FoodTypeConst, UserProfileGoalConst, ExerciseIntensityConst } from './diet-constants'
+import { UserProfileGoalConst, ExerciseIntensityConst } from './diet-constants'
 import { AuthService } from 'src/app/auth/auth.service'
 import { FoodService } from 'src/app/food/food.service'
 import { Diet, DietBalance, DietFood } from './../diet-data.model'
 import { UserProfileData } from 'src/app/user-profile/user-profile.model'
+import { FoodTypeConst } from 'src/app/food/food-data.model'
 
 @Injectable({
   providedIn: 'root'
@@ -110,41 +111,44 @@ export class DietProcess {
   async getFood(foodType: number) {
     const food = await this.foodService.getFoodByType(foodType).toPromise()
 
-    let lRandom: number
-    let foodResult = {} as DietFood
+    if (food.length > 0) {
 
-    lRandom = Math.floor(Math.random() * food.length)
+      let lRandom: number
+      let foodResult = {} as DietFood
 
-    foodResult = food[lRandom]
+      lRandom = Math.floor(Math.random() * food.length)
 
-    if (foodResult.portion) {
-      foodResult.amount = 1
-    } else {
-      switch (foodType) {
-        case FoodTypeConst.PROTEIN:
-          foodResult.amount = Math.round((100 * (0.15 * this.diet.dietBalance.totalDayProtein)) / foodResult.protein)
+      foodResult = food[lRandom]
 
-          break
-        case FoodTypeConst.CARBOHYDRATE:
-          foodResult.amount = Math.round((100 * (0.15 * this.diet.dietBalance.totalDayCarbohydrate)) / foodResult.carbohydrate)
+      if (foodResult.portion) {
+        foodResult.amount = 1
+      } else {
+        switch (foodType) {
+          case FoodTypeConst.PROTEIN:
+            foodResult.amount = Math.round((100 * (0.15 * this.diet.dietBalance.totalDayProtein)) / foodResult.protein)
 
-          break
+            break
+          case FoodTypeConst.CARBOHYDRATE:
+            foodResult.amount = Math.round((100 * (0.15 * this.diet.dietBalance.totalDayCarbohydrate)) / foodResult.carbohydrate)
 
-        case FoodTypeConst.FAT:
-          foodResult.amount = Math.round((100 * (0.25 * this.diet.dietBalance.totalDayFat)) / foodResult.fat)
+            break
 
-          break
+          case FoodTypeConst.FAT:
+            foodResult.amount = Math.round((100 * (0.25 * this.diet.dietBalance.totalDayFat)) / foodResult.fat)
 
-        case FoodTypeConst.SNACK:
-          foodResult.amount = Math.round((100 * (0.08 * this.diet.dietBalance.totalDayCalories)) / foodResult.calorie)
-          break
+            break
 
+          case FoodTypeConst.SNACK:
+            foodResult.amount = Math.round((100 * (0.08 * this.diet.dietBalance.totalDayCalories)) / foodResult.calorie)
+            break
+
+        }
+
+        this.calculateFoodProperties(foodResult)
       }
 
-      this.calculateFoodProperties(foodResult)
+      this.diet.foods.push(JSON.parse(JSON.stringify(foodResult)))
     }
-
-    this.diet.foods.push(JSON.parse(JSON.stringify(foodResult)))
   }
 
   private calculateFoodProperties(food: DietFood): DietFood {
