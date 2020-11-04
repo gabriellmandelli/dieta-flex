@@ -11,7 +11,6 @@ import { HistoricListComponent } from './historic/historic-list/historic-list.co
 import { HistoricAddComponent } from './historic/historic-add/historic-add.component';
 import { DietListComponent } from './diet/diet-list/diet-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FoodPreferencesComponent } from './food-preferences/food-preferences.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +25,6 @@ const routes: Routes = [
   { path: 'tips-list/tips-add', component: TipsAddComponent, canActivate: [AuthGuard] },
   { path: 'tips-list', component: TipsListComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'food-preferences', component: FoodPreferencesComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
