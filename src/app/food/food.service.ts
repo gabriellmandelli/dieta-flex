@@ -62,7 +62,7 @@ export class FoodService {
       .pipe(
         map(data => {
           return data.map(action => (
-            { id: action.payload.doc.id, ...action.payload.doc.data() as DietFood } as DietFood
+            { ...action.payload.doc.data() as DietFood, id: action.payload.doc.id } as DietFood
           ));
         }),
         take(1)
