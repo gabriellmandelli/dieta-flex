@@ -1,5 +1,9 @@
 # PROTÓTIPO DE SOFTWARE PARA GERAÇÃO DE UMA DIETA FLEXÍVEL COM BASE NO PERFIL DO USUÁRIO
 
+### Palavras-chave
+
+Dieta flexível. Balanço calórico. Sistema especialista. Lógica difusa.
+
 ## Resumo
 
 As pessoas sempre estão à procura de qualidade de vida e consequentemente
@@ -24,10 +28,42 @@ Esse relatório aponta que várias famílias têm deixado de consumir
 pratos tradicionais e aumentado a ingestão de alimentos ultra
 processados e de baixa qualidade nutricional (FAO, 2017).
 
-### Palavras-chave
+Sabe-se, contudo, que, de maneira geral, as pessoas apreciam
+uma boa comida, mas raramente estão dispostas a fazer algum tipo de
+dieta. Muitas dietas restringem doces e lanches gordurosos, porém esse
+tipo de dieta na maioria das vezes não é seguido totalmente pelo fato de
+a pessoa ficar estressada ou ter um desejo muito grande de comer
+aquele alimento vetado da sua dieta.
 
-Dieta flexível. Balanço calórico. Sistema especialista. Lógica difusa.
+Tudo isso se feito de maneira saudável, mesmo que feito com
+frequência, evitará com que a pessoa saia do seu IMC (Índice de Massa
+Corporal) e passe a entrar para o grupo de pessoas acima do peso.
+Por conta de vários problemas da dieta tradicional, muitas
+pessoas estão optando pela dieta flexível. A dieta flexível é uma dieta
+com base em uma alimentação que atinja os macronutrientes do dia.
+Desta forma é possível inserir alimentos gordurosos na dieta de forma
+que as calorias sejam suficientes no dia para atingir o objetivo da
+pessoa, tudo isso gerado de forma automatizada com base no perfil de
+cada pessoa.
 
+Como então adaptar uma dieta flexível no dia a dia com base em
+objetivos de perfis diferentes de pessoas utilizando para isso recursos
+tecnológicos? Para responder a esta pergunta, o objetivo geral deste
+trabalho é desenvolver um protótipo de um software mobile com base
+em um sistema especialista difuso para facilitar a preparação de uma
+dieta flexível de acordo com as necessidades e objetivos de cada
+usuário.
+
+Para que o objetivo geral seja atingido, é fundamental entender o
+funcionamento da dieta flexível, sabendo como utilizar os
+macronutrientes e os dados pessoais de cada pessoa para converter
+todas essas informações em calorias. Todas as informações que serão
+apresentadas ao usuário, ficarão disponíveis após o usuário informar os
+dados pessoais e o objetivo a ser alcançado. Para isso é necessário o
+estudo de sistemas especialistas e lógica difusa. Com o conhecimento
+em dieta flexível, sistemas especialistas e lógica difusa, torna-se viável o
+desenvolvimento de um protótipo de controle calórico, com o
+estabelecimento do perfil do usuário e gerar uma dieta base.
 
 ## Autores
 
