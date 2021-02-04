@@ -66,9 +66,9 @@ desenvolvimento de um protótipo de controle calórico, com o
 estabelecimento do perfil do usuário e gerar uma dieta base.
 
 ## Autores
-
-1. Cairon Sergio de Freitas
-2. Gabriel Brogni Zaccaron
-3. Gabriel Longarete Mandelli
+1. [Cairon Sergio de Freitas](https://github.com/CaironFreitas)
+2. [Gabriel Brogni Zaccaron](https://github.com/zaccaron07)
+3. [Gabriel Longarete Mandelli](https://github.com/gabriellmandelli)
 4. Cristiano Damiani Tomasi
+
 
